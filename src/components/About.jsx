@@ -1,20 +1,11 @@
 import React from "react";
+import Header from './Header';
+import Footer from './Footer';
 
 const About = () => {
   return (
     <div className="bg-white text-gray-900">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 shadow-md">
-        <h1 className="text-2xl font-bold">DOHS</h1>
-        <ul className="flex space-x-6">
-          <li className="text-gray-700 hover:text-black cursor-pointer">Home</li>
-          <li className="text-gray-700 hover:text-black cursor-pointer">Stories</li>
-          <li className="text-gray-700 hover:text-black cursor-pointer">Surveillance Data</li>
-          <li className="text-gray-700 hover:text-black cursor-pointer">Subscriber Portal</li>
-        </ul>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Contact Centre</button>
-      </nav>
-
+      <Header />
       {/* Hero Section */}
       <section className="text-center py-12">
         <h2 className="text-4xl font-bold">Our story</h2>
@@ -61,19 +52,7 @@ const About = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between">
-          <div>
-            <h4 className="text-lg font-semibold">DOHS</h4>
-            <p className="text-gray-400">Innovative solutions for a better tomorrow.</p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold">Contact Us</h4>
-            <p className="text-gray-400">+234 123 456 7890</p>
-            <p className="text-gray-400">wildlifeoneresearchgroup@gmail.com</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
