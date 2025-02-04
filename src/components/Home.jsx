@@ -1,19 +1,19 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import StatsSection from "./StatsSection";
 
 const Home = () => {
   return (
     <>
-    <Header />
     <div className="font-sans text-gray-900">
-        <header className="relative w-full h-[80vh] bg-cover bg-center flex items-center justify-start text-white px-10"
-    style={{ backgroundImage: "url('/assets/landing.svg')" }}
-  >
-    <div className="text-left max-w-2xl">
-      <h1 className="text-4xl font-bold leading-tight">
-        Integrated Health Surveillance for a <span className="italic">Safer</span> World
-      </h1>
+
+  <Header />
+    <header className="relative w-full h-[80vh] bg-cover bg-center flex items-center justify-start text-white px-10" style={{ backgroundImage: "url('/assets/landing.png')" }}>
+        <div className="text-left max-w-2xl space-y-6">
+            <h1 className="text-5xl font-bold leading-[1.15] tracking-tight">
+                Integrated Health Surveillance for a <span className="italic font-semibold">Safer</span> World
+            </h1>
       <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
         Get Started Now
         <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
@@ -23,6 +23,8 @@ const Home = () => {
       </p>
     </div>
   </header>
+
+      <StatsSection />
 
       {/* Services Section */}
       <section className="py-16 px-8 text-center">
@@ -62,7 +64,7 @@ const Home = () => {
         <h2 className="text-3xl font-semibold">Quick Consult For</h2>
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           {['Lassa Fever', 'Yellow Fever', 'Ebola', 'Influenza', 'Dengue', 'Monkeypox'].map((disease) => (
-            <button key={disease} className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white">
+            <button key={disease} className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover: bg-[#1BA9B5] hover:text-white">
               {disease}
             </button>
           ))}
@@ -77,14 +79,14 @@ const Home = () => {
             <div key={article} className="p-6 border rounded-lg shadow-md hover:shadow-lg transition bg-white">
               <p className="text-xl font-medium">{article}</p>
               <p className="text-gray-600 mt-2">The most accurate insights on...</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Read More</button>
+              <button className="mt-4 px-4 py-2  bg-[#1BA9B5] text-white rounded-lg">Read More</button>
             </div>
           ))}
         </div>
       </section>
 
       {/* Chat Section */}
-      <section className="py-16 px-8 text-center bg-blue-600 text-white">
+      <section className="py-16 px-8 text-center  bg-[#1BA9B5] text-white">
         <h2 className="text-3xl font-semibold">Chat with Ivie</h2>
         <p className="mt-2">I'm here to assist you with any questions or needs you might have.</p>
         <textarea className="w-full mt-4 p-3 rounded-lg text-gray-900" placeholder="Type your message here..." />
@@ -92,9 +94,16 @@ const Home = () => {
 
       {/* Newsletter Section */}
      <section className="py-12 px-8 flex items-center justify-between">
-      <h2 className="text-1xl font-semibold max-w-md">
+      {/* <h2 className="text-1xl font-semibold ">
         Subscribe to our newsletter to get the latest news in your inbox
-        </h2>
+        </h2> */}
+
+
+<h2 className="text-1xl font-semibold">
+  <span className="block">Subscribe to our newsletter</span>
+  <span className="block">to get the latest news in your inbox</span>
+</h2>
+
         <div className="mt-4 flex items-center">
           <input type="email" placeholder="Enter your email" className="p-3 border rounded-l-lg w-64" />
           <button className="px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-r-lg flex items-center gap-2">
