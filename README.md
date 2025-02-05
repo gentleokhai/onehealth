@@ -21,10 +21,10 @@ The One Health App significantly contributes to **Sustainable Development Goals 
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, Tailwind CSS
-- **Backend:** Node.js, Express
-- **Database:** PostgreSQL / MongoDB
-- **Authentication:** JWT & OAuth
-- **Hosting:** Vercel / AWS
+- **Backend:** FastApi, python
+- **Database:** MongoDB
+- **Authentication:** JWT
+- **Hosting:** Vercel
 
 ## 📂 Installation & Setup
 To run the project locally:
