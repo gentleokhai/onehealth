@@ -87,11 +87,27 @@ const Home = () => {
       </section>
 
       {/* Chat Section */}
-      <section className="py-16 px-8 text-center  bg-[#1BA9B5] text-white">
-        <h2 className="text-3xl font-semibold">Chat with Ivie</h2>
-        <p className="mt-2">I'm here to assist you with any questions or needs you might have.</p>
-        <textarea className="w-full mt-4 p-3 rounded-lg text-gray-900" placeholder="Type your message here..." />
-      </section>
+        <section className="py-20 px-12 bg-[#1BA9B5] text-white flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+
+          <img src="/assets/chat.png" alt="Chat with Ivie" className="w-64 h-auto md:w-[268px] md:h-[411px] object-cover rounded-lg" />
+          {/* Middle - Text Content */}
+          <div className="flex-1 mx-12 max-w-xl">
+            <h2 className="text-4xl font-bold">Hello! I’m Ivie,</h2>
+            <p className="mt-4 text-lg leading-relaxed">
+              I’m here to assist you with any questions or needs you might have. Whether you’re looking for information,
+              support, or just a friendly chat, I’m here to help. How can I assist you today?
+            </p>
+          </div>
+
+          {/* Right - Button */}
+          <div className="mt-6 md:mt-0 bg-white w-80 p-8 rounded-lg shadow-md flex items-center justify-center">
+            <button className="bg-[#1BA9B5] text-white w-40 px-8 py-4 rounded-lg font-semibold text-lg">
+              Chat
+            </button>
+          </div>
+
+        </section>
+
 
       {/* Newsletter Section */}
       <section className="py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
