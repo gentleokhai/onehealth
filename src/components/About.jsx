@@ -1,6 +1,9 @@
+//About page
 import React from "react";
 import Header from './Header';
 import Footer from './Footer';
+import TeamSection from './TeamSection';
+
 
 const About = () => {
   return (
@@ -89,27 +92,24 @@ const About = () => {
         <h3 className="text-3xl font-bold text-center">Meet our Team</h3>
         <p className="mt-6 text-gray-700 text-center max-w-6xl mx-auto text-lg leading-relaxed">
           Our team is a harmonious blend of experienced doctors, dedicated researchers, and skilled software developers, ensuring a comprehensive and innovative approach to digital health surveillance.
+          <br></br>
           With a wealth of expertise, we share common trends and strategies to improve health outcomes and ensure our platform remains at the forefront of technological advancements.
+          <br></br>
           Leveraging our unique skill sets, we create a seamless and user-friendly experience, allowing you to focus on what matters most. Build your next health surveillance solution with confidence, knowing our balanced team is here to support you every step of the way.
         </p>
-
-        <div className="grid grid-cols-4 gap-6 mt-8">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div key={i} className="text-center">
-              <img src={`/images/team${i + 1}.svg`} alt={`Team member ${i + 1}`} className="rounded-full w-24 mx-auto" />
-              <p className="mt-2 font-medium">Name {i + 1}</p>
-              <p className="text-gray-600">Position</p>
-            </div>
-          ))}
-        </div>
+        
+        <TeamSection />
       </section>
 
-
-      <section className="py-12 px-6 max-w-6xl mx-auto">
-        <h3 className="text-3xl text-gray-600">Stakeholders</h3>
-        <ol>Tetfund</ol>
+      <section className="py-12  max-w-6xl mx-auto">
+        <h3 className="text-3xl text-[#473BF0]">Stakeholders</h3>
+        <ol className="list-disc list-inside mt-4 space-y-2">
+          <li>Federal Government of Nigeria</li>
+          <li>Federal Ministry of Education</li>
+          <li>Tertiary Education Trust Fund (TETFUND)</li>
+        </ol>
       </section>
-      {/* Footer */}
+
       <Footer />
     </div>
   );

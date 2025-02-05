@@ -1,3 +1,4 @@
+//Footer
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -85,7 +86,7 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-lg">
-          © 2025 Digital OneHealth Surveillance by WWRG. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Digital OneHealth Surveillance by WWRG. All Rights Reserved.
         </div>
       </div>
     </footer>

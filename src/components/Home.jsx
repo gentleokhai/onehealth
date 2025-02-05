@@ -1,3 +1,4 @@
+//Home Page
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -23,6 +24,7 @@ const Home = () => {
       </div>
     </header>
 
+   {/* Countup */}
       <StatsSection />
 
       {/* Services Section */}

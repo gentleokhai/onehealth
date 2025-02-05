@@ -1,3 +1,4 @@
+//Countup for home page
 import CountUp from "react-countup";
 
 const StatsSection = () => {
@@ -8,7 +9,7 @@ const StatsSection = () => {
         {/* Healthcare Providers */}
         <div className="flex items-center gap-4">
           <h2 className="text-3xl font-bold text-gray-900">
-            <CountUp end={500} duration={3} />+
+            <CountUp end={5000} duration={3} />+
           </h2>
           <div className="text-gray-600 text-lg leading-tight">
             <span className="block">Healthcare Providers</span>
