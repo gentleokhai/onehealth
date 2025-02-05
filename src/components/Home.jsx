@@ -63,7 +63,7 @@ const Home = () => {
         <h2 className="text-3xl font-semibold">Quick Consult For</h2>
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           {['Lassa Fever', 'Yellow Fever', 'Ebola', 'Influenza', 'Dengue', 'Monkeypox'].map((disease) => (
-            <button key={disease} className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover: bg-[#1BA9B5] hover:text-white">
+            <button key={disease} className="px-6 py-3 border border-blue-600 text-white-600 rounded-lg hover: bg-[#1BA9B5] hover:text-white">
               {disease}
             </button>
           ))}

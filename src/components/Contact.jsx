@@ -28,7 +28,7 @@ const Contact = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-4">
               <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md">
-                <item.icon className="text-teal-500" size={32} />
+                <item.icon className="text-teal-500" size={40} />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold">{item.title}</h3>

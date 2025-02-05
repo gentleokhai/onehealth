@@ -31,10 +31,10 @@ To run the project locally:
 
 ```sh
 # Clone the repository
-git clone https://github.com/gentleokhai/one-health-app.git
+git clone https://github.com/gentleokhai/one-health.git
 
 # Navigate into the project directory
-cd one-health-app
+cd one-health
 
 # Install dependencies
 npm install
