@@ -7,22 +7,21 @@ const Home = () => {
   return (
     <>
     <div className="font-sans text-gray-900">
-
-  <Header />
+    <Header />
     <header className="relative w-full h-[80vh] bg-cover bg-center flex items-center justify-start text-white px-10" style={{ backgroundImage: "url('/assets/landing.png')" }}>
         <div className="text-left max-w-2xl space-y-6">
             <h1 className="text-5xl font-bold leading-[1.15] tracking-tight">
                 Integrated Health Surveillance for a <span className="italic font-semibold">Safer</span> World
             </h1>
-      <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
-        Get Started Now
-        <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
-      </button>
-      <p className="mt-4 text-lg">
-        The One Health approach is a collaborative, multisectoral, and transdisciplinary strategy that recognizes the interconnection between human health, animal health, and environmental health.
-      </p>
-    </div>
-  </header>
+            <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
+             Get Started Now
+             <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
+          </button>
+          <p className="mt-4 text-lg">
+            The One Health approach is a collaborative, multisectoral, and transdisciplinary strategy that recognizes the interconnection between human health, animal health, and environmental health.
+          </p>
+      </div>
+    </header>
 
       <StatsSection />
 
@@ -93,25 +92,24 @@ const Home = () => {
       </section>
 
       {/* Newsletter Section */}
-     <section className="py-12 px-8 flex items-center justify-between">
-      {/* <h2 className="text-1xl font-semibold ">
-        Subscribe to our newsletter to get the latest news in your inbox
-        </h2> */}
-
-
-<h2 className="text-1xl font-semibold">
-  <span className="block">Subscribe to our newsletter</span>
-  <span className="block">to get the latest news in your inbox</span>
-</h2>
-
-        <div className="mt-4 flex items-center">
-          <input type="email" placeholder="Enter your email" className="p-3 border rounded-l-lg w-64" />
-          <button className="px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-r-lg flex items-center gap-2">
-            Get Started Now
-            <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
-          </button>
-        </div>
-      </section>
+      <section className="py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+        <h2 className="text-lg md:text-2xl font-semibold text-center md:text-left">
+          <span className="block">Subscribe to our newsletter</span>
+          <span className="block">to get the latest news in your inbox</span>
+        </h2>
+        
+        <div className="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2">
+          <input
+              type="email"
+              placeholder="Enter your email" 
+              className="p-3 border rounded-lg sm:rounded-l-lg sm:rounded-r-none w-full sm:w-64"
+          />
+            <button className="px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg sm:rounded-r-lg sm:rounded-l-none flex items-center gap-2">
+              Get Started Now
+              <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
+            </button>
+          </div>
+        </section>
 
       {/* Footer */}
       <Footer />
