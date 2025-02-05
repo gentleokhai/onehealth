@@ -103,9 +103,9 @@ const Signup = () => {
                 required
               >
                 <option value="">Select Location</option>
-                <option value="New York">New York</option>
-                <option value="London">London</option>
-                <option value="Toronto">Toronto</option>
+                <option value="New York">Lagos</option>
+                <option value="London">Abuja</option>
+                <option value="Toronto">Accra</option>
               </select>
             </div>
 
