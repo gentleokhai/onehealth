@@ -20,7 +20,7 @@ const Header = () => {
         <ul className="hidden md:flex space-x-8 text-lg font-medium items-center">
           <li><a href="/" className={`hover:text-teal-500 no-underline ${isActive("/")}`}>Home</a></li>
           <li><a href="/about" className={`hover:text-teal-500 no-underline ${isActive("/about")}`}>About</a></li>
-          <li><a href="/data" className={`hover:text-teal-500 no-underline ${isActive("/data")}`}>Surveillance Data</a></li>
+          <li><a href="/contact" className={`hover:text-teal-500 no-underline ${isActive("/data")}`}>Contact</a></li>
           <li><a href="/stakeholder" className={`hover:text-teal-500 no-underline ${isActive("/stakeholder")}`}>Stakeholder Portal</a></li>
           <li><a href="/login" className={`hover:text-teal-500 no-underline ${isActive("/login")}`}>LogIn</a></li>
 
@@ -51,7 +51,7 @@ const Header = () => {
           <ul className="text-lg font-semibold space-y-4">
             <li><a href="/" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/")}`}>Home</a></li>
             <li><a href="/about" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/about")}`}>About</a></li>
-            <li><a href="/data" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/data")}`}>Surveillance Data</a></li>
+            <li><a href="/contact" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/data")}`}>Contact</a></li>
             <li><a href="/stakeholder" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/stakeholder")}`}>Stakeholder Portal</a></li>
             <li><a href="/login" className={`block py-2 hover:text-teal-500 no-underline ${isActive("/login")}`}>LogIn</a></li>
 

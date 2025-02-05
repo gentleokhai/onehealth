@@ -16,7 +16,7 @@ const About = () => {
           <p className="max-w-4xl mx-auto mt-4 text-gray-900">
             Welcome to White Water Research Group, pioneers in developing a cutting-edge Digital OneHealth Surveillance System tailored for sub-Saharan Africa. Our mission is to create a holistic, community-driven, and intelligent surveillance platform that seamlessly integrates the health of humans, animals, plants, and the environment.
           </p>
-          <img src="/assets/landing.png" alt="Team discussion" className="mx-auto mt-6 w-4/5 rounded-lg shadow-lg" />
+          <img src="/assets/about.jpg" alt="Team discussion" className="mx-auto mt-6 w-4/5 rounded-lg shadow-lg" />
         </div>
       </section>
 
@@ -85,13 +85,16 @@ const About = () => {
 
 
       {/* Team Section */}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
+      <section className="bg-gray-100 py-12 px-6 mx-auto">
         <h3 className="text-3xl font-bold text-center">Meet our Team</h3>
-        <p className="mt-4 text-gray-700 text-center">
-          Our team is a blend of experienced doctors, researchers, and software developers.
+        <p className="mt-6 text-gray-700 text-center max-w-6xl mx-auto text-lg leading-relaxed">
+          Our team is a harmonious blend of experienced doctors, dedicated researchers, and skilled software developers, ensuring a comprehensive and innovative approach to digital health surveillance.
+          With a wealth of expertise, we share common trends and strategies to improve health outcomes and ensure our platform remains at the forefront of technological advancements.
+          Leveraging our unique skill sets, we create a seamless and user-friendly experience, allowing you to focus on what matters most. Build your next health surveillance solution with confidence, knowing our balanced team is here to support you every step of the way.
         </p>
+
         <div className="grid grid-cols-4 gap-6 mt-8">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 30 }).map((_, i) => (
             <div key={i} className="text-center">
               <img src={`/images/team${i + 1}.svg`} alt={`Team member ${i + 1}`} className="rounded-full w-24 mx-auto" />
               <p className="mt-2 font-medium">Name {i + 1}</p>
@@ -101,6 +104,11 @@ const About = () => {
         </div>
       </section>
 
+
+      <section className="py-12 px-6 max-w-6xl mx-auto">
+        <h3 className="text-3xl text-gray-600">Stakeholders</h3>
+        <ol>Tetfund</ol>
+      </section>
       {/* Footer */}
       <Footer />
     </div>
