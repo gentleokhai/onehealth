@@ -1,4 +1,4 @@
-mport React from "react";
+import React from "react";
 
 const services = [
   { name: "Report Generation", image: "/assets/service1.png" },
