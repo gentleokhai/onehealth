@@ -40,17 +40,21 @@ const Footer = () => {
           <div>
             <h3 className="text-teal-400 font-semibold text-2xl">Company</h3>
             <ul className="mt-4 space-y-3">
-              {["Home", "About us", "Services"].map((item) => (
-                <li
-                  key={item}
-                  className="text-gray-400 text-lg hover:text-white transition-colors duration-300 cursor-pointer"
-                >
-                  {item}
+              {[
+                { label: "Home", href: "/" },
+                { label: "About us", href: "/about" },
+                { label: "Services", href: "/services" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-gray-400 text-lg hover:text-white transition-colors duration-300">
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
+          
           <div>
             <h3 className="text-teal-400 font-semibold text-2xl">Explore</h3>
             <ul className="mt-4 space-y-3">

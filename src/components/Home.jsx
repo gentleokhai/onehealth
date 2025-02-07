@@ -3,6 +3,9 @@ import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import StatsSection from "./StatsSection";
+import ServiceSection from "./ServiceSection";
+import QuickConsult from "./QuickConsult";
+import ArticleSection from "./ArticleSection";
 
 const Home = () => {
   return (
@@ -14,10 +17,13 @@ const Home = () => {
             <h1 className="text-5xl font-bold leading-[1.15] tracking-tight">
                 Integrated Health Surveillance for a <span className="italic font-semibold">Safer</span> World
             </h1>
-            <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
-             Get Started Now
-             <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
-          </button>
+            <a href="/signup">
+              <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
+                Get Started Now
+                <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
+              </button>
+            </a>
+
           <p className="mt-4 text-lg">
             The One Health approach is a collaborative, multisectoral, and transdisciplinary strategy that recognizes the interconnection between human health, animal health, and environmental health.
           </p>
@@ -28,18 +34,7 @@ const Home = () => {
       <StatsSection />
 
       {/* Services Section */}
-      <section className="py-16 px-8 text-center">
-        <h2 className="text-3xl font-semibold">Services we offer you</h2>
-        <p className="mt-2 text-gray-600">With a comprehensive suite of tools, you can effectively monitor and manage health data.</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-          {['Report Generation', 'Surveillance Map', 'Assistance', 'Analytics', 'CineHealth Articles', 'Disease Prevention', 'Hotlines'].map((service) => (
-            <div key={service} className="p-6 border rounded-lg shadow-md hover:shadow-lg transition">
-              <img src={`/images/${service.toLowerCase().replace(/ /g, "-")}.svg`} alt={service} className="w-16 mx-auto mb-4" />
-              <p className="font-medium">{service}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ServiceSection />
 
       {/* Why Choose Us Section */}
       <section className="bg-gray-100 py-16 px-8">
@@ -61,30 +56,9 @@ const Home = () => {
       </section>
 
       {/* Quick Consult Section */}
-      <section className="py-16 px-8 text-center">
-        <h2 className="text-3xl font-semibold">Quick Consult For</h2>
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          {['Lassa Fever', 'Yellow Fever', 'Ebola', 'Influenza', 'Dengue', 'Monkeypox'].map((disease) => (
-            <button key={disease} className="px-6 py-3 border border-blue-600 text-white-600 rounded-lg hover: bg-[#1BA9B5] hover:text-white">
-              {disease}
-            </button>
-          ))}
-        </div>
-      </section>
-
+      <QuickConsult />
       {/* Healthcare Articles Section */}
-      <section className="bg-gray-100 py-16 px-8 text-center">
-        <h2 className="text-3xl font-semibold">OneHealth Healthcare Articles</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {['Complete Nutrition', 'Relationship with Pets', 'Why own a GreenHouse'].map((article) => (
-            <div key={article} className="p-6 border rounded-lg shadow-md hover:shadow-lg transition bg-white">
-              <p className="text-xl font-medium">{article}</p>
-              <p className="text-gray-600 mt-2">The most accurate insights on...</p>
-              <button className="mt-4 px-4 py-2  bg-[#1BA9B5] text-white rounded-lg">Read More</button>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ArticleSection />
 
       {/* Chat Section */}
         <section className="py-20 px-12 bg-[#1BA9B5] text-white flex flex-col md:flex-row items-center justify-between text-center md:text-left">

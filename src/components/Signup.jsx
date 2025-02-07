@@ -6,8 +6,7 @@ import Footer from "./Footer";
 const Signup = () => {
   return (
     <>
-      <Header />
-      <div className="flex h-screen">
+      <div className="flex h-screen pt-24">
         {/* Left Side Image */}
         <div className="w-1/2 hidden md:flex items-center justify-center">
           <img
