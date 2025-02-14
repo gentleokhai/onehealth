@@ -31,6 +31,59 @@ const articles = [
     icon: <Mountain size={32} className="text-teal-600" />,
     buttonText: "Book Now",
   },
+  {
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },
+  {
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },
+  {
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },
+  {
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },
+  {
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },{
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },{
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },{
+    title: "Survival by the River",
+    description:
+      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+    icon: <Mountain size={32} className="text-teal-600" />,
+    buttonText: "Book Now",
+  },
 ];
 
 const ArticlesSection = () => {
