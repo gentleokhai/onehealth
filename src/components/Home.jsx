@@ -13,7 +13,7 @@ const Home = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-teal-500 to-blue-700 text-white px-6 text-center overflow-hidden">
+      {/* <section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-teal-500 to-blue-700 text-white px-6 text-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-30 animate-pulse"></div>
         <div className="relative max-w-3xl z-10">
           <h1 className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
@@ -29,7 +29,38 @@ const Home = () => {
             Get Started
           </a>
         </div>
-      </section>
+      </section> */}
+
+<section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-teal-600 to-blue-800 text-white px-8 text-center overflow-hidden">
+  {/* Background animation */}
+  <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-700 opacity-40 animate-pulse"></div>
+
+  <div className="relative max-w-4xl z-10">
+    <h1 className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+      Revolutionizing OneHealth Surveillance
+    </h1>
+    <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl mx-auto">
+      Harnessing AI-driven analytics to unify human, animal, plant, and environmental health, ensuring proactive and intelligent disease surveillance.
+    </p>
+
+    {/* CTA Buttons */}
+    <div className="mt-8 flex justify-center space-x-6">
+      <a
+        href="/signup"
+        className="px-8 py-4 bg-white text-teal-700 font-semibold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl"
+      >
+        Get Started
+      </a>
+      <a
+        href="/about"
+        className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full transition-all transform hover:bg-white hover:text-teal-700"
+      >
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
       {/* Stats Section */}
