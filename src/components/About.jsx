@@ -98,7 +98,7 @@ const About = () => {
           Leveraging our unique skill sets, we create a seamless and user-friendly experience, allowing you to focus on what matters most. Build your next health surveillance solution with confidence, knowing our balanced team is here to support you every step of the way.
         </p>
         
-        <TeamSection />
+        {/* <TeamSection /> */}
       </section>
 
       <section className="py-12  max-w-6xl mx-auto">

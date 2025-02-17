@@ -1,13 +1,10 @@
 import React from "react";
 
 const services = [
-  { name: "Report Generation", image: "/assets/service1.png" },
   { name: "Surveillance Map", image: "/assets/service2.png" },
   { name: "AI Assistance", image: "/assets/service3.png" },
-  { name: "Analytics", image: "/assets/service4.png" },
   { name: "Onehealth Articles", image: "/assets/service5.png" },
   { name: "Disease Prevention", image: "/assets/service6.png" },
-  { name: "Hotlines", image: "/assets/service7.png" },
 ];
 
 const ServicesSection = () => {
