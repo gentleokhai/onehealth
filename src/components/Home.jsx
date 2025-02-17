@@ -9,57 +9,25 @@ import ArticleSection from "./ArticleSection";
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-900 bg-gray-50">
+    <div className="font-sans text-gray-900">
       <Header />
-      
-      {/* Hero Section */}
-      {/* <section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-teal-500 to-blue-700 text-white px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-30 animate-pulse"></div>
-        <div className="relative max-w-3xl z-10">
-          <h1 className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-            Transforming Health Surveillance
-          </h1>
-          <p className="mt-6 text-xl opacity-90">
-            Harnessing AI-driven analytics for smarter and proactive health solutions.
+    <header className="relative w-full h-[80vh] bg-cover bg-center flex items-center justify-start text-white px-10" style={{ backgroundImage: "url('/assets/landing.png')" }}>
+        <div className="text-left max-w-2xl space-y-6">
+            <h1 className="text-5xl font-bold leading-[1.15] tracking-tight">
+                Integrated Health Surveillance for a <span className="italic font-semibold">Safer</span> World
+            </h1>
+            <a href="/signup">
+              <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
+                Get Started Now
+                <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
+              </button>
+            </a>
+
+          <p className="mt-4 text-lg">
+            The One Health approach is a collaborative, multisectoral, and transdisciplinary strategy that recognizes the interconnection between human health, animal health, and environmental health.
           </p>
-          <a
-            href="/signup"
-            className="mt-8 inline-block px-8 py-4 bg-white text-teal-600 font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
-          >
-            Get Started
-          </a>
-        </div>
-      </section> */}
-
-<section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-teal-600 to-blue-800 text-white px-8 text-center overflow-hidden">
-  {/* Background animation */}
-  <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-700 opacity-40 animate-pulse"></div>
-
-  <div className="relative max-w-4xl z-10">
-    <h1 className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
-      Revolutionizing OneHealth Surveillance
-    </h1>
-    <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl mx-auto">
-      Harnessing AI-driven analytics to unify human, animal, plant, and environmental health, ensuring proactive and intelligent disease surveillance.
-    </p>
-
-    {/* CTA Buttons */}
-    <div className="mt-8 flex justify-center space-x-6">
-      <a
-        href="/signup"
-        className="px-8 py-4 bg-white text-teal-700 font-semibold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl"
-      >
-        Get Started
-      </a>
-      <a
-        href="/about"
-        className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full transition-all transform hover:bg-white hover:text-teal-700"
-      >
-        Learn More
-      </a>
-    </div>
-  </div>
-</section>
+      </div>
+    </header>
 
 
 

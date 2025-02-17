@@ -1,88 +1,70 @@
 import React, { useRef } from "react";
-import { FaHeartbeat } from "react-icons/fa";
-import { BookOpen, Sprout, Mountain } from "lucide-react";
+import { FaPaw, FaTree } from "react-icons/fa";
+import { BookOpen, Sprout, Mountain, Stethoscope, Dumbbell, Brain, Heart } from "lucide-react";
 
 const articles = [
   {
     title: "Complete Nutrition",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+      "Discover the essential nutrients your body needs for optimal health. Learn how to balance your diet effectively.",
     icon: <BookOpen size={32} className="text-teal-600" />,
     buttonText: "Read Now",
   },
   {
     title: "Relationship with Pets",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <FaHeartbeat size={32} className="text-teal-600" />,
+      "Explore the benefits of having pets for mental and emotional well-being. Learn how they improve your lifestyle.",
+    icon: <FaPaw size={32} className="text-teal-600" />,
     buttonText: "Read Now",
   },
   {
-    title: "Why own a GreenHouse",
+    title: "Why Own a Greenhouse?",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+      "Learn how greenhouses help you grow fresh, organic food year-round and improve air quality in your space.",
     icon: <Sprout size={32} className="text-teal-600" />,
     buttonText: "Read Now",
   },
   {
-    title: "Survival by the River",
+    title: "Mountain Survival Guide",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
+      "Essential survival skills for harsh environments. Learn how to navigate, find food, and stay safe in the wild.",
     icon: <Mountain size={32} className="text-teal-600" />,
     buttonText: "Book Now",
   },
   {
-    title: "Survival by the River",
+    title: "Heart Health Tips",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
+      "Prevent heart disease with a healthier lifestyle. Understand the risks and steps to strengthen your heart.",
+    icon: <Heart size={32} className="text-teal-600" />,
+    buttonText: "Read Now",
   },
   {
-    title: "Survival by the River",
+    title: "Mental Health Awareness",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
+      "Your mental health is just as important as your physical health. Learn strategies to manage stress and anxiety.",
+    icon: <Brain size={32} className="text-teal-600" />,
+    buttonText: "Read Now",
   },
   {
-    title: "Survival by the River",
+    title: "Fitness & Strength Training",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
+      "Improve your physical health with the right exercises and training methods. Build strength effectively.",
+    icon: <Dumbbell size={32} className="text-teal-600" />,
+    buttonText: "Read Now",
   },
   {
-    title: "Survival by the River",
+    title: "The Power of Herbal Medicine",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
+      "Explore how herbal remedies have been used for centuries to treat various ailments naturally.",
+    icon: <FaTree size={32} className="text-teal-600" />,
+    buttonText: "Read Now",
   },
   {
-    title: "Survival by the River",
+    title: "Emergency First Aid Basics",
     description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
-  },{
-    title: "Survival by the River",
-    description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
-  },{
-    title: "Survival by the River",
-    description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
-  },{
-    title: "Survival by the River",
-    description:
-      "The exact cause of most types of diabetes is unknown. In all cases, sugar builds up in the bloodstream. This is...",
-    icon: <Mountain size={32} className="text-teal-600" />,
-    buttonText: "Book Now",
+      "Knowing basic first aid can save lives. Learn essential skills to handle medical emergencies effectively.",
+    icon: <Stethoscope size={32} className="text-teal-600" />,
+    buttonText: "Read Now",
   },
 ];
 
