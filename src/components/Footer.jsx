@@ -72,8 +72,8 @@ const Footer = () => {
           {/* Contact and Social Media */}
           <div className="md:col-span-2 lg:col-span-1">
             <h3 className="text-teal-400 font-semibold text-2xl">Contact Us</h3>
-            <p className="mt-3 text-white font-semibold text-xl">+234 123 456 7890</p>
-            <p className="text-gray-400 text-lg">whitewateresearchgroup@gmail.com</p>
+            <p className="mt-3 text-white font-semibold text-xl">+234 813 157 1767</p>
+            <p className="text-gray-400 text-lg">igyousha96@gmail.com</p>
             <div className="flex space-x-6 mt-5">
               {[
                 { icon: Facebook, href: "#" },
