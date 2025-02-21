@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        </Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
       </Router>
   );
 };
