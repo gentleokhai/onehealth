@@ -16,7 +16,7 @@ const Home = () => {
             <h1 className="text-5xl font-bold leading-[1.15] tracking-tight">
                 Integrated Health Surveillance for a <span className="italic font-semibold">Safer</span> World
             </h1>
-            <a href="/signup">
+            <a href="/signup"  className="no-underline">
               <button className="mt-6 px-6 py-3 bg-[#1BA9B5] hover:bg-[#178D97] text-white font-semibold rounded-lg flex items-center gap-2">
                 Get Started Now
                 <img src="/assets/tail-right.png" alt="Arrow" className="w-5 h-5" />
