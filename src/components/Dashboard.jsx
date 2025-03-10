@@ -210,11 +210,11 @@ const monthlyRevenue = [
   { month: "May", revenue: 48000 },
   { month: "Jun", revenue: 52000 },
   { month: "Jul", revenue: 58000 },
-  { month: "Aug", revenue: 56000 },
-  { month: "Sep", revenue: 60000 },
-  { month: "Oct", revenue: 65000 },
-  { month: "Nov", revenue: 68000 },
-  { month: "Dec", revenue: 75000 }
+  { month: "Aug", revenue: 56000 }
+//   { month: "Sep", revenue: 60000 },
+//   { month: "Oct", revenue: 65000 },
+//   { month: "Nov", revenue: 68000 },
+//   { month: "Dec", revenue: 75000 }
 ];
 
 const Dashboard = () => {
