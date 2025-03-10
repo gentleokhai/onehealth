@@ -7,13 +7,7 @@ import {
   UserGroupIcon,
   InboxIcon,
   CheckCircleIcon,
-  BellIcon,
-  // ClockIcon,
-  // ArrowTrendingUpIcon,
-  // DocumentTextIcon,
-  // CogIcon,
-  // ShieldCheckIcon,
-  // QuestionMarkCircleIcon
+  BellIcon
 } from "@heroicons/react/24/outline";
 
 // Mock data for the dashboard
