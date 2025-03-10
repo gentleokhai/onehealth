@@ -2,10 +2,10 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import StatsSection from "./StatsSection";
-import ServiceSection from "./ServiceSection";
-import QuickConsult from "./QuickConsult";
-import ArticleSection from "./ArticleSection";
+import StatsSection from "./landing/StatsSection";
+import ServiceSection from "./landing/ServiceSection";
+import QuickConsult from "./landing/QuickConsult";
+import ArticleSection from "./landing/ArticleSection";
 
 const Home = () => {
   return (

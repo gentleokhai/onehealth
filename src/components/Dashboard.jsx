@@ -1,629 +1,592 @@
-// // // import { useState, useEffect } from "react";
-// // // import { useNavigate } from "react-router-dom";
-
-// // // const Dashboard = () => {
-// // //   const navigate = useNavigate();
-// // //   const [user, setUser] = useState(null);
-// // //   const [activeTab, setActiveTab] = useState("overview");
-
-// // //   useEffect(() => {
-// // //     // Fetch user data from localStorage (set on login)
-// // //     const storedUser = localStorage.getItem("user");
-// // //     if (storedUser) {
-// // //       setUser(JSON.parse(storedUser));
-// // //     } else {
-// // //       navigate("/login"); // Redirect to login if no user data found
-// // //     }
-// // //   }, [navigate]);
-
-// // //   const handleLogout = () => {
-// // //     localStorage.removeItem("token");
-// // //     localStorage.removeItem("user");
-// // //     navigate("/login");
-// // //   };
-
-// // //   if (!user) {
-// // //     return <p>Loading...</p>;
-// // //   }
-
-// // //   return (
-// // //     <div className="flex h-screen bg-gray-100">
-// // //       {/* Sidebar */}
-// // //       <aside className="w-64 bg-teal-600 text-white p-6 hidden md:block">
-// // //         <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
-// // //         <ul>
-// // //           <li className="mb-4">
-// // //             <button
-// // //               className={`w-full text-left ${activeTab === "overview" ? "font-bold" : ""}`}
-// // //               onClick={() => setActiveTab("overview")}
-// // //             >
-// // //               Overview
-// // //             </button>
-// // //           </li>
-// // //           <li className="mb-4">
-// // //             <button
-// // //               className={`w-full text-left ${activeTab === "profile" ? "font-bold" : ""}`}
-// // //               onClick={() => setActiveTab("profile")}
-// // //             >
-// // //               Profile
-// // //             </button>
-// // //           </li>
-// // //           <li className="mb-4">
-// // //             <button
-// // //               className={`w-full text-left ${activeTab === "orders" ? "font-bold" : ""}`}
-// // //               onClick={() => setActiveTab("orders")}
-// // //             >
-// // //               Orders
-// // //             </button>
-// // //           </li>
-// // //           <li className="mb-4">
-// // //             <button
-// // //               className={`w-full text-left ${activeTab === "settings" ? "font-bold" : ""}`}
-// // //               onClick={() => setActiveTab("settings")}
-// // //             >
-// // //               Settings
-// // //             </button>
-// // //           </li>
-// // //           <li className="mt-6">
-// // //             <button
-// // //               onClick={handleLogout}
-// // //               className="w-full bg-red-500 py-2 rounded-lg text-center hover:bg-red-600"
-// // //             >
-// // //               Logout
-// // //             </button>
-// // //           </li>
-// // //         </ul>
-// // //       </aside>
-
-// // //       {/* Main Content */}
-// // //       <main className="flex-1 p-8">
-// // //         <h1 className="text-3xl font-bold mb-4 text-teal-700">
-// // //           Welcome, {user.firstName} {user.lastName}!
-// // //         </h1>
-// // //         <p className="text-gray-600">
-// // //           You're logged in as a {user.designation} in {user.location}.
-// // //         </p>
-
-// // //         {/* Content Area */}
-// // //         <div className="mt-6 bg-white p-6 rounded-lg shadow">
-// // //           {activeTab === "overview" && (
-// // //             <div>
-// // //               <h2 className="text-xl font-bold mb-4">Overview</h2>
-// // //               <p>Here’s a summary of your recent activities.</p>
-// // //             </div>
-// // //           )}
-
-// // //           {activeTab === "profile" && (
-// // //             <div>
-// // //               <h2 className="text-xl font-bold mb-4">Your Profile</h2>
-// // //               <p>
-// // //                 <strong>Name:</strong> {user.firstName} {user.lastName}
-// // //               </p>
-// // //               <p>
-// // //                 <strong>Email:</strong> {user.email}
-// // //               </p>
-// // //               <p>
-// // //                 <strong>Designation:</strong> {user.designation}
-// // //               </p>
-// // //               <p>
-// // //                 <strong>Location:</strong> {user.location}
-// // //               </p>
-// // //             </div>
-// // //           )}
-
-// // //           {activeTab === "orders" && (
-// // //             <div>
-// // //               <h2 className="text-xl font-bold mb-4">Your Orders</h2>
-// // //               <p>No recent orders yet.</p>
-// // //             </div>
-// // //           )}
-
-// // //           {activeTab === "settings" && (
-// // //             <div>
-// // //               <h2 className="text-xl font-bold mb-4">Settings</h2>
-// // //               <p>Update your preferences here.</p>
-// // //             </div>
-// // //           )}
-// // //         </div>
-// // //       </main>
-// // //     </div>
-// // //   );
-// // // };
-
-// // // export default Dashboard;
-
-
-// import React, { useState, useEffect } from "react";
-// import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-// import { Home, Bell, Search, LogOut, Menu, Sun, Moon } from "lucide-react";
-
-// const reportsData = [
-//   { name: "Jan", current: 10000, lastYear: 8000 },
-//   { name: "Feb", current: 15000, lastYear: 12000 },
-//   { name: "Mar", current: 18000, lastYear: 16000 },
-//   { name: "Apr", current: 22000, lastYear: 20000 },
-// ];
-
-// const Dashboard = () => {
-//   const [darkMode, setDarkMode] = useState(false);
-  
-//   useEffect(() => {
-//     const savedTheme = localStorage.getItem("darkMode");
-//     if (savedTheme) setDarkMode(JSON.parse(savedTheme));
-//   }, []);
-
-//   useEffect(() => {
-//     localStorage.setItem("darkMode", JSON.stringify(darkMode));
-//     document.documentElement.classList.toggle("dark", darkMode);
-//   }, [darkMode]);
-
-//   return (
-//     <div className={`flex h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
-//       {/* Sidebar */}
-//       <aside className={`w-64 p-5 flex flex-col ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//         <h1 className="text-2xl font-bold">DOHS</h1>
-//         <nav className="mt-6">
-//           <ul className="space-y-2">
-//             <li className="flex items-center gap-2 font-semibold text-blue-500"><Home size={18} /> Overview</li>
-//             <li>Report Generation</li>
-//             <li>Projects</li>
-//             <li>Epidemic Reports</li>
-//             <li className="flex items-center gap-2 text-red-500 cursor-pointer"><LogOut size={18} /> Log Out</li>
-//           </ul>
-//         </nav>
-//       </aside>
-
-//       {/* Main Content */}
-//       <main className="flex-1 p-6">
-//         <header className={`flex justify-between items-center p-4 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//           <div className="flex items-center gap-4">
-//             <Menu size={24} className="cursor-pointer" />
-//             <h2 className="text-lg font-semibold">Dashboard / Default</h2>
-//           </div>
-//           <div className="flex items-center gap-4">
-//             <Search size={20} />
-//             <Bell size={20} />
-//             <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Consult Online</button>
-//             <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-full">
-//               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-//             </button>
-//           </div>
-//         </header>
-
-//         {/* Stats */}
-//         <section className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-//           {["Reports Uploaded", "Visits", "New Reports", "Live Reporters"].map((title, index) => (
-//             <div key={index} className={`p-4 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//               <p>{title}</p>
-//               <h3 className="text-2xl font-bold">{Math.floor(Math.random() * 10000)}</h3>
-//               <p className="text-sm text-green-500">+{(Math.random() * 10).toFixed(2)}%</p>
-//             </div>
-//           ))}
-//         </section>
-
-//         {/* Charts */}
-//         <section className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-//           <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//             <h3>Total Reports</h3>
-//             <ResponsiveContainer width="100%" height={200}>
-//               <LineChart data={reportsData}>
-//                 <XAxis dataKey="name" />
-//                 <YAxis />
-//                 <Tooltip />
-//                 <Line type="monotone" dataKey="current" stroke="#8884d8" />
-//                 <Line type="monotone" dataKey="lastYear" stroke="#82ca9d" />
-//               </LineChart>
-//             </ResponsiveContainer>
-//           </div>
-//         </section>
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-
-
-// import React, { useState, useEffect } from "react";
-// import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-// import { Home, Bell, Search, LogOut, Menu, Sun, Moon } from "lucide-react";
-
-// const reportsData = [
-//   { name: "Jan", current: 10000, lastYear: 8000 },
-//   { name: "Feb", current: 15000, lastYear: 12000 },
-//   { name: "Mar", current: 18000, lastYear: 16000 },
-//   { name: "Apr", current: 22000, lastYear: 20000 },
-// ];
-
-// const Dashboard = () => {
-//   const [darkMode, setDarkMode] = useState(false);
-  
-//   useEffect(() => {
-//     const savedTheme = localStorage.getItem("darkMode");
-//     if (savedTheme !== null) {
-//       const isDark = JSON.parse(savedTheme);
-//       setDarkMode(isDark);
-//       if (isDark) {
-//         document.documentElement.classList.add("dark");
-//       } else {
-//         document.documentElement.classList.remove("dark");
-//       }
-//     }
-//   }, []);
-  
-//   useEffect(() => {
-//     localStorage.setItem("darkMode", JSON.stringify(darkMode));
-//     if (darkMode) {
-//       document.documentElement.classList.add("dark");
-//     } else {
-//       document.documentElement.classList.remove("dark");
-//     }
-//   }, [darkMode]);
-  
-
-//   return (
-//     <div className={`flex h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
-//       {/* Sidebar */}
-//       <aside className={`w-64 p-5 flex flex-col ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//         <h1 className="text-2xl font-bold">DOHS</h1>
-//         <nav className="mt-6">
-//           <ul className="space-y-2">
-//             <li className="flex items-center gap-2 font-semibold text-blue-500"><Home size={18} /> Overview</li>
-//             <li>Report Generation</li>
-//             <li>Projects</li>
-//             <li>Epidemic Reports</li>
-//             <li className="flex items-center gap-2 text-red-500 cursor-pointer"><LogOut size={18} /> Log Out</li>
-//           </ul>
-//         </nav>
-//       </aside>
-
-//       {/* Main Content */}
-//       <main className="flex-1 p-6">
-//         {/* Top Bar */}
-//         <header className={`flex justify-between items-center p-4 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//           <div className="flex items-center gap-4">
-//             <Menu size={24} className="cursor-pointer" />
-//             <h2 className="text-lg font-semibold">Dashboard / Default</h2>
-//           </div>
-//           <div className="flex items-center gap-4">
-//             <Search size={20} />
-//             <Bell size={20} />
-//             <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Consult Online</button>
-//             <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-full">
-//               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-//             </button>
-//           </div>
-//         </header>
-
-//         {/* Stats */}
-//         <section className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-//           {["Reports Uploaded", "Visits", "New Reports", "Live Reporters"].map((title, index) => (
-//             <div key={index} className={`p-4 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//               <p>{title}</p>
-//               <h3 className="text-2xl font-bold">{Math.floor(Math.random() * 10000)}</h3>
-//               <p className="text-sm text-green-500">+{(Math.random() * 10).toFixed(2)}%</p>
-//             </div>
-//           ))}
-//         </section>
-
-//         {/* Charts */}
-//         <section className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-//           <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//             <h3>Total Reports</h3>
-//             <ResponsiveContainer width="100%" height={200}>
-//               <LineChart data={reportsData}>
-//                 <XAxis dataKey="name" />
-//                 <YAxis />
-//                 <Tooltip />
-//                 <Line type="monotone" dataKey="current" stroke="#8884d8" />
-//                 <Line type="monotone" dataKey="lastYear" stroke="#82ca9d" />
-//               </LineChart>
-//             </ResponsiveContainer>
-//           </div>
-
-//           <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//             <h3>Reports by Device</h3>
-//             <ResponsiveContainer width="100%" height={200}>
-//               <BarChart data={reportsData}>
-//                 <XAxis dataKey="name" />
-//                 <YAxis />
-//                 <Tooltip />
-//                 <Bar dataKey="current" fill="#82ca9d" />
-//               </BarChart>
-//             </ResponsiveContainer>
-//           </div>
-//         </section>
-//       </main>
-
-//       {/* Right Panel */}
-//       <aside className={`w-72 p-5 ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-//         <h3 className="font-semibold">Notifications</h3>
-//         <ul className="mt-2 text-sm space-y-2">
-//           <li>Alert: Yellow Fever in Kano</li>
-//           <li>Report reviewed by Dr. Dele</li>
-//           <li>Ebola outbreak in Lagos</li>
-//         </ul>
-        
-//         <h3 className="mt-6 font-semibold">Contacts</h3>
-//         <ul className="mt-2 text-sm space-y-2">
-//           <li>Dr. Dele</li>
-//           <li>Dr. Irowa</li>
-//           <li>Vet. Dr. Ikpoba</li>
-//         </ul>
-//       </aside>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-
-
 import React, { useState, useEffect } from "react";
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Home, Bell, Search, LogOut, Menu, Sun, Moon, X } from "lucide-react";
+import DashboardLayout from "./dashboard/DashboardLayout";
 
-const reportsData = [
-  { name: "Jan", current: 10000, lastYear: 8000 },
-  { name: "Feb", current: 15000, lastYear: 12000 },
-  { name: "Mar", current: 18000, lastYear: 16000 },
-  { name: "Apr", current: 22000, lastYear: 20000 },
+import { 
+  CalendarIcon,
+  ChartBarIcon,
+  UserGroupIcon,
+  InboxIcon,
+  CheckCircleIcon,
+  BellIcon,
+  // ClockIcon,
+  // ArrowTrendingUpIcon,
+  // DocumentTextIcon,
+  // CogIcon,
+  // ShieldCheckIcon,
+  // QuestionMarkCircleIcon
+} from "@heroicons/react/24/outline";
+
+// Mock data for the dashboard
+const statCards = [
+  { 
+    title: "Total Users", 
+    value: "2,453", 
+    change: "+12.5%", 
+    isPositive: true,
+    icon: <UserGroupIcon className="h-6 w-6" />,
+    color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300"
+  },
+  { 
+    title: "Revenue", 
+    value: "$45,623", 
+    change: "+8.2%", 
+    isPositive: true,
+    icon: <ChartBarIcon className="h-6 w-6" />,
+    color: "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300"
+  },
+  { 
+    title: "Pending Tasks", 
+    value: "24", 
+    change: "-3.1%", 
+    isPositive: true,
+    icon: <CheckCircleIcon className="h-6 w-6" />,
+    color: "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300"
+  },
+  { 
+    title: "New Messages", 
+    value: "18", 
+    change: "+5.4%", 
+    isPositive: true,
+    icon: <InboxIcon className="h-6 w-6" />,
+    color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300"
+  }
+];
+
+const recentActivity = [
+  {
+    id: 1,
+    user: "John Doe",
+    action: "completed task",
+    target: "Website Redesign",
+    time: "2 hours ago"
+  },
+  {
+    id: 2,
+    user: "Sarah Smith",
+    action: "commented on",
+    target: "Q1 Marketing Plan",
+    time: "4 hours ago"
+  },
+  {
+    id: 3,
+    user: "Michael Johnson",
+    action: "uploaded file",
+    target: "Financial Report.pdf",
+    time: "Yesterday"
+  },
+  {
+    id: 4,
+    user: "David Brown",
+    action: "created project",
+    target: "Mobile App Development",
+    time: "3 days ago"
+  },
+  {
+    id: 5,
+    user: "Emma Wilson",
+    action: "approved",
+    target: "Budget Proposal",
+    time: "3 days ago"
+  },
+  {
+    id: 6,
+    user: "Alex Parker",
+    action: "shared document with",
+    target: "Marketing Team",
+    time: "4 days ago"
+  }
+];
+
+const upcomingEvents = [
+  {
+    id: 1,
+    title: "Team Meeting",
+    date: "Today, 2:00 PM",
+    attendees: 5,
+    location: "Conference Room A"
+  },
+  {
+    id: 2,
+    title: "Client Presentation",
+    date: "Tomorrow, 10:00 AM",
+    attendees: 3,
+    location: "Virtual Meeting"
+  },
+  {
+    id: 3,
+    title: "Product Launch",
+    date: "March 15, 9:00 AM",
+    attendees: 12,
+    location: "Main Auditorium"
+  },
+  {
+    id: 4,
+    title: "Training Session",
+    date: "March 17, 1:00 PM",
+    attendees: 8,
+    location: "Training Room B"
+  }
+];
+
+const pendingTasks = [
+  {
+    id: 1,
+    title: "Review marketing materials",
+    priority: "High",
+    dueDate: "Today",
+    assignedTo: "You"
+  },
+  {
+    id: 2,
+    title: "Prepare quarterly report",
+    priority: "Medium",
+    dueDate: "March 12",
+    assignedTo: "You"
+  },
+  {
+    id: 3,
+    title: "Update product documentation",
+    priority: "Low",
+    dueDate: "March 15",
+    assignedTo: "Sarah"
+  },
+  {
+    id: 4,
+    title: "Fix navigation bug in app",
+    priority: "High",
+    dueDate: "March 11",
+    assignedTo: "Michael"
+  }
+];
+
+const notifications = [
+  {
+    id: 1,
+    title: "New comment on your post",
+    time: "15 minutes ago",
+    isRead: false
+  },
+  {
+    id: 2,
+    title: "Your task 'Design homepage' is due soon",
+    time: "1 hour ago",
+    isRead: false
+  },
+  {
+    id: 3,
+    title: "Meeting with Client XYZ rescheduled",
+    time: "3 hours ago",
+    isRead: true
+  },
+  {
+    id: 4,
+    title: "New team member joined",
+    time: "Yesterday",
+    isRead: true
+  }
+];
+
+const systemUpdates = [
+  {
+    id: 1,
+    title: "System maintenance scheduled",
+    description: "The system will be undergoing maintenance on March 15 from 2AM to 4AM UTC.",
+    date: "March 15"
+  },
+  {
+    id: 2,
+    title: "New feature: Dark mode",
+    description: "Dark mode is now available. Enable it from your user settings.",
+    date: "March 8"
+  },
+  {
+    id: 3,
+    title: "Security update",
+    description: "Important security patches have been applied to the system.",
+    date: "March 5"
+  }
+];
+
+// Monthly revenue data for chart
+const monthlyRevenue = [
+  { month: "Jan", revenue: 35000 },
+  { month: "Feb", revenue: 42000 },
+  { month: "Mar", revenue: 38000 },
+  { month: "Apr", revenue: 45000 },
+  { month: "May", revenue: 48000 },
+  { month: "Jun", revenue: 52000 },
+  { month: "Jul", revenue: 58000 },
+  { month: "Aug", revenue: 56000 },
+  { month: "Sep", revenue: 60000 },
+  { month: "Oct", revenue: 65000 },
+  { month: "Nov", revenue: 68000 },
+  { month: "Dec", revenue: 75000 }
 ];
 
 const Dashboard = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("darkMode");
-    return saved ? JSON.parse(saved) : false;
-  });
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [activeNav, setActiveNav] = useState("Overview");
-
+  const [totalVisitors, setTotalVisitors] = useState(0);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeTab, setActiveTab] = useState("tasks");
+  
+  // Simulate data loading
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-  }, [darkMode]);
+    const target = 14392;
+    const increment = Math.floor(target / 30);
+    let current = 0;
+    
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        clearInterval(interval);
+        setTotalVisitors(target);
+      } else {
+        setTotalVisitors(current);
+      }
+    }, 50);
+    
+    // Check system dark mode preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDarkMode(prefersDark);
+    
+    return () => clearInterval(interval);
+  }, []);
 
-  const navItems = [
-    { name: "Overview", icon: Home },
-    "Report Generation",
-    "Projects",
-    "Epidemic Reports",
-  ];
-
-  const chartColors = {
-    light: { axis: "#374151", tooltip: "#fff" },
-    dark: { axis: "#fff", tooltip: "#1f2937" },
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
 
-  return (
-    <div className={`flex h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
-      {/* Sidebar */}
-      <aside
-        className={`fixed md:relative z-20 h-screen w-64 p-5 flex flex-col transform transition-transform duration-200 ease-in-out ${
-          darkMode ? "bg-gray-800" : "bg-white shadow-md"
-        } ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
-      >
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">DOHS</h1>
-          <X
-            className="md:hidden cursor-pointer"
-            onClick={() => setIsSidebarOpen(false)}
-          />
-        </div>
-        <nav className="mt-6">
-          <ul className="space-y-2">
-            {navItems.map((item) => (
-              <li
-                key={typeof item === "string" ? item : item.name}
-                className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer ${
-                  activeNav === (typeof item === "string" ? item : item.name)
-                    ? "bg-blue-100 text-blue-600"
-                    : "hover:bg-gray-100 dark:hover:bg-gray-700"
-                }`}
-                onClick={() => typeof item !== "string" && setActiveNav(item.name)}
-              >
-                {typeof item !== "string" && (
-                  <item.icon size={18} className="min-w-[18px]" />
-                )}
-                {typeof item === "string" ? item : item.name}
-              </li>
-            ))}
-            <li
-              className="flex items-center gap-2 p-2 rounded-lg cursor-pointer text-red-500 hover:bg-red-50 dark:hover:bg-gray-700"
-              onClick={() => setShowLogoutModal(true)}
-            >
-              <LogOut size={18} />
-              Log Out
-            </li>
-          </ul>
-        </nav>
-      </aside>
+  // Priority color mapping
+  const getPriorityColor = (priority) => {
+    switch (priority) {
+      case 'High':
+        return 'text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900';
+      case 'Medium':
+        return 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900';
+      case 'Low':
+        return 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900';
+      default:
+        return 'text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800';
+    }
+  };
 
-      {/* Main Content */}
-      <main className="flex-1 p-6 overflow-auto">
-        {/* Top Bar */}
-        <header
-          className={`flex justify-between items-center p-4 rounded-lg ${
-            darkMode ? "bg-gray-800" : "bg-white shadow-md"
-          }`}
-        >
-          <div className="flex items-center gap-4">
-            <Menu
-              size={24}
-              className="cursor-pointer md:hidden"
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            />
-            <h2 className="text-lg font-semibold">Dashboard / Default</h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className={`relative ${isSearchOpen ? "w-48" : "w-8"}`}>
-              <Search
-                size={20}
-                className="absolute left-2 top-2 cursor-pointer"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-              />
-              {isSearchOpen && (
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-8 pr-2 py-1 rounded-lg bg-gray-100 dark:bg-gray-700"
-                />
+  const unreadNotificationsCount = notifications.filter(n => !n.isRead).length;
+
+  return (
+    <DashboardLayout>
+      <div className="space-y-6 transition-colors duration-200">
+        {/* Header with Dark Mode Toggle */}
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Reports</h1>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <button 
+                onClick={() => setShowNotifications(!showNotifications)} 
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
+                <BellIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+                {unreadNotificationsCount > 0 && (
+                  <span className="absolute top-0 right-0 h-5 w-5 flex items-center justify-center text-xs text-white bg-red-500 rounded-full">
+                    {unreadNotificationsCount}
+                  </span>
+                )}
+              </button>
+              {showNotifications && (
+                <div className="absolute right-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-lg z-10 border border-gray-200 dark:border-gray-700">
+                  <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Notifications</h3>
+                    <button className="text-xs text-blue-600 dark:text-blue-400 hover:underline">
+                      Mark all as read
+                    </button>
+                  </div>
+                  <div className="max-h-64 overflow-y-auto">
+                    {notifications.map(notification => (
+                      <div key={notification.id} className={`p-3 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${!notification.isRead ? 'bg-blue-50 dark:bg-blue-900/20' : ''}`}>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white">{notification.title}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{notification.time}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="p-3 text-center">
+                    <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                      View all notifications
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-            <Bell size={20} className="cursor-pointer" />
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Consult Online
-            </button>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <div className="h-8 w-8 rounded-full bg-blue-500 cursor-pointer"></div>
           </div>
-        </header>
-
-        {/* Stats */}
-        <section className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {["Reports Uploaded", "Visits", "New Reports", "Live Reporters"].map((title) => (
-            <div
-              key={title}
-              className={`p-4 rounded-lg transition-transform hover:scale-105 ${
-                darkMode ? "bg-gray-800" : "bg-white shadow-md"
-              }`}
+        </div>
+        
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {statCards.map((card, index) => (
+            <div 
+              key={index} 
+              className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 transition-all duration-200 hover:shadow-lg border border-gray-100 dark:border-gray-700"
             >
-              <p className="text-sm text-gray-500 dark:text-gray-400">{title}</p>
-              <h3 className="text-2xl font-bold my-2">{Math.floor(Math.random() * 10000)}</h3>
-              <p className="text-sm text-green-500">
-                +{(Math.random() * 10).toFixed(2)}%
-              </p>
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">{card.title}</p>
+                  <h3 className="text-2xl font-bold mt-1 text-gray-900 dark:text-white">{card.value}</h3>
+                  <div className="flex items-center mt-2">
+                    <span className={`text-sm ${card.isPositive ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-400"}`}>
+                      {card.change}
+                    </span>
+                    <span className="text-gray-500 dark:text-gray-400 text-xs ml-1">vs last month</span>
+                  </div>
+                </div>
+                <div className={`p-3 rounded-full ${card.color}`}>
+                  {card.icon}
+                </div>
+              </div>
             </div>
           ))}
-        </section>
+        </div>
 
-        {/* Charts */}
-        <section className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-            <h3 className="mb-4">Total Reports</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={reportsData}>
-                <XAxis
-                  dataKey="name"
-                  stroke={darkMode ? chartColors.dark.axis : chartColors.light.axis}
-                />
-                <YAxis
-                  stroke={darkMode ? chartColors.dark.axis : chartColors.light.axis}
-                />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: darkMode ? chartColors.dark.tooltip : chartColors.light.tooltip,
-                  }}
-                />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="current"
-                  stroke="#8884d8"
-                  name="Current Year"
-                />
-                <Line
-                  type="monotone"
-                  dataKey="lastYear"
-                  stroke="#82ca9d"
-                  name="Last Year"
-                />
-              </LineChart>
-            </ResponsiveContainer>
+        {/* Visitors Counter */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-gray-100 dark:border-gray-700">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Total Website Visitors</h2>
+            <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+              View Details
+            </button>
           </div>
-
-          <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}>
-            <h3 className="mb-4">Reports by Device</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={reportsData}>
-                <XAxis
-                  dataKey="name"
-                  stroke={darkMode ? chartColors.dark.axis : chartColors.light.axis}
-                />
-                <YAxis
-                  stroke={darkMode ? chartColors.dark.axis : chartColors.light.axis}
-                />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: darkMode ? chartColors.dark.tooltip : chartColors.light.tooltip,
-                  }}
-                />
-                <Legend />
-                <Bar dataKey="current" fill="#82ca9d" name="Current Reports" />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="flex items-center">
+            <div className="text-3xl font-bold mr-4 text-gray-900 dark:text-white">
+              {totalVisitors.toLocaleString()}
+            </div>
+            <div className="text-green-500 dark:text-green-400 text-sm font-medium">
+              +18.2% from last month
+            </div>
           </div>
-        </section>
-      </main>
-
-      {/* Right Panel */}
-      <aside
-        className={`hidden lg:block w-72 p-5 ${darkMode ? "bg-gray-800" : "bg-white shadow-md"}`}
-      >
-        <h3 className="font-semibold mb-4">Notifications</h3>
-        <ul className="space-y-3">
-          {["Yellow Fever in Kano", "Report reviewed", "Ebola outbreak"].map((note) => (
-            <li
-              key={note}
-              className={`p-3 rounded-lg cursor-pointer ${
-                darkMode ? "hover:bg-gray-700" : "hover:bg-gray-100"
-              }`}
-            >
-              <span className="text-sm">{note}</span>
-              <p className="text-xs text-gray-500 mt-1">2 hours ago</p>
-            </li>
-          ))}
-        </ul>
+          <div className="mt-4 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+            <div className="h-full bg-blue-500 dark:bg-blue-600 w-3/4"></div>
+          </div>
+          <div className="mt-2 flex justify-between text-xs text-gray-500 dark:text-gray-400">
+            <span>0</span>
+            <span>Target: 20,000</span>
+          </div>
+        </div>
         
-        <h3 className="mt-6 font-semibold mb-4">Contacts</h3>
-        <ul className="space-y-3">
-          {["Dr. Dele", "Dr. Irowa", "Vet. Dr. Ikpoba"].map((contact) => (
-            <li
-              key={contact}
-              className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer ${
-                darkMode ? "hover:bg-gray-700" : "hover:bg-gray-100"
-              }`}
+        {/* Monthly Revenue Chart */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-gray-100 dark:border-gray-700">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Monthly Revenue</h2>
+            <div className="flex space-x-2">
+              <button className="px-3 py-1 text-xs bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 rounded-full">
+                This Year
+              </button>
+              <button className="px-3 py-1 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded-full">
+                Previous Year
+              </button>
+            </div>
+          </div>
+          <div className="h-64 relative">
+            <div className="absolute bottom-0 inset-x-0 flex justify-between h-60">
+              {monthlyRevenue.map((data, index) => (
+                <div key={index} className="flex flex-col items-center justify-end flex-1 px-2">
+                  <div 
+                    className="w-full bg-blue-500 dark:bg-blue-600 rounded-t-sm" 
+                    style={{ height: `${(data.revenue / 75000) * 100}%` }}
+                  ></div>
+                  <span className="text-xs mt-2 text-gray-500 dark:text-gray-400">{data.month}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-4 flex justify-between text-sm text-gray-500 dark:text-gray-400">
+            <span>Total Revenue: $642,000</span>
+            <span className="text-green-500 dark:text-green-400">+15.8% YoY</span>
+          </div>
+        </div>
+        
+        {/* Tasks and Activity Tab Panel */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-100 dark:border-gray-700 overflow-hidden">
+          <div className="flex border-b border-gray-200 dark:border-gray-700">
+            <button 
+              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'tasks' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}
+              onClick={() => setActiveTab('tasks')}
             >
-              <div className="h-8 w-8 rounded-full bg-blue-500"></div>
-              <span className="text-sm">{contact}</span>
-            </li>
-          ))}
-        </ul>
-      </aside>
-
-      {/* Logout Modal */}
-      {showLogoutModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}>
-            <h3 className="text-lg font-semibold mb-4">Confirm Logout</h3>
-            <p className="mb-6">Are you sure you want to log out?</p>
-            <div className="flex justify-end gap-4">
-              <button
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                onClick={() => setShowLogoutModal(false)}
-              >
-                Cancel
+              Pending Tasks
+            </button>
+            <button 
+              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'activity' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}
+              onClick={() => setActiveTab('activity')}
+            >
+              Recent Activity
+            </button>
+            <button 
+              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'updates' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}
+              onClick={() => setActiveTab('updates')}
+            >
+              System Updates
+            </button>
+          </div>
+          
+          <div className="p-6">
+            {activeTab === 'tasks' && (
+              <>
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-semibold text-gray-900 dark:text-white">Your Tasks ({pendingTasks.length})</h3>
+                  <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                    View All Tasks
+                  </button>
+                </div>
+                <div className="space-y-3">
+                  {pendingTasks.map(task => (
+                    <div key={task.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                      <div className="flex items-start space-x-3">
+                        <input type="checkbox" className="h-5 w-5 mt-0.5 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500" />
+                        <div>
+                          <p className="text-sm font-medium text-gray-900 dark:text-white">{task.title}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Due: {task.dueDate} • Assigned to: {task.assignedTo}</p>
+                        </div>
+                      </div>
+                      <span className={`text-xs px-2 py-1 rounded-full ${getPriorityColor(task.priority)}`}>
+                        {task.priority}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+            
+            {activeTab === 'activity' && (
+              <>
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-semibold text-gray-900 dark:text-white">Recent Activity</h3>
+                  <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                    View All
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {recentActivity.map(activity => (
+                    <div key={activity.id} className="flex items-start border-b border-gray-200 dark:border-gray-700 pb-3">
+                      <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 mr-3">
+                        {activity.user.charAt(0)}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm">
+                          <span className="font-medium text-gray-900 dark:text-white">{activity.user}</span>
+                          <span className="text-gray-600 dark:text-gray-400"> {activity.action} </span>
+                          <span className="font-medium text-gray-900 dark:text-white">{activity.target}</span>
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{activity.time}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+            
+            {activeTab === 'updates' && (
+              <>
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-semibold text-gray-900 dark:text-white">System Updates</h3>
+                  <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                    All Announcements
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {systemUpdates.map(update => (
+                    <div key={update.id} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-medium text-gray-900 dark:text-white">{update.title}</h4>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">{update.date}</span>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{update.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+        
+        {/* Two Column Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Recent Activity */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-gray-100 dark:border-gray-700">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Team Performance</h2>
+              <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                View Details
               </button>
-              <button
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                onClick={() => {
-                  // Add logout logic here
-                  setShowLogoutModal(false);
-                }}
-              >
-                Log Out
+            </div>
+            <div className="space-y-4">
+              {['Marketing', 'Development', 'Design', 'Sales'].map((team, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{team}</span>
+                    <span className="text-sm font-medium text-gray-900 dark:text-white">{70 + index * 5}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                    <div 
+                      className="h-2 bg-blue-500 dark:bg-blue-600 rounded-full" 
+                      style={{ width: `${70 + index * 5}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Upcoming Events */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-gray-100 dark:border-gray-700">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Upcoming Events</h2>
+              <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                Add Event
               </button>
+            </div>
+            <div className="space-y-4">
+              {upcomingEvents.map(event => (
+                <div key={event.id} className="flex items-start border-b border-gray-200 dark:border-gray-700 pb-3">
+                  <div className="h-10 w-10 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center text-red-600 dark:text-red-300 mr-3">
+                    <CalendarIcon className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium text-sm text-gray-900 dark:text-white">{event.title}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{event.date}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      <span className="inline-flex items-center">
+                        <svg className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {event.location}
+                      </span>
+                    </p>
+                    <div className="flex items-center mt-2">
+                      <div className="flex -space-x-2">
+                        {[...Array(Math.min(3, event.attendees))].map((_, index) => (
+                          <div 
+                            key={index} 
+                            className="h-6 w-6 rounded-full bg-gray-200 dark:bg-gray-600 border-2 border-white dark:border-gray-800"
+                          />
+                        ))}
+                      </div>
+                      {event.attendees > 3 && (
+                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
+                          +{event.attendees - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    </DashboardLayout>
   );
 };
 
