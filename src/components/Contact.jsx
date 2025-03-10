@@ -23,9 +23,9 @@ const Contact = () => {
         
         <div className="grid md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
           {[
-            { icon: Phone, title: "Call us", details: ["+1-940-394-2948", "+1-389-385-3807"] },
-            { icon: Mail, title: "Email us", details: ["support@brainwave.io", "contact@brainwave.io"] },
-            { icon: MapPin, title: "Visit us", details: ["34 Madison Street, NY, USA 10005"] }
+            { icon: Phone, title: "Call us", details: ["0813 157 1767", "+234 813 157 1767"] },
+            { icon: Mail, title: "Email us", details: ["igyousha96@gmail.com", "igyousha96@gmail.com"] },
+            { icon: MapPin, title: "Visit us", details: ["1 Paul Omorodion street, BDPA, Edo state, Nigeria"] }
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-4">
               <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md">

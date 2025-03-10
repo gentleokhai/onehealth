@@ -38,9 +38,15 @@ const Header = ({ darkMode, setDarkMode, isSidebarOpen, setIsSidebarOpen, user }
         {/* <Bell size={20} className="cursor-pointer relative">
           <span className="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 text-xs flex items-center justify-center text-white">3</span>
         </Bell> */}
-        <button className="bg-blue-600 text-white px-3 py-1.5 text-sm rounded-lg hover:bg-blue-700 transition-colors hidden sm:block">
-          Consult Online
-        </button>
+        {/* <button className="bg-blue-600 text-white px-3 py-1.5 text-sm rounded-lg hover:bg-blue-700 transition-colors hidden sm:block">
+          <a href="/contact">Consult Online</a>
+        </button> */}
+        <a href="/contact">
+          <button className="bg-blue-600 text-white px-4 py-2 text-sm rounded-lg hover:bg-blue-700 transition-colors hidden sm:block">
+            Consult Online
+          </button>
+        </a>
+
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
