@@ -64,11 +64,11 @@ const Home = () => {
       <ArticleSection />
 
       {/* Chat Section */}
-      <section className="py-20 px-12 bg-teal-600 text-white text-center">
+      {/* <section className="py-20 px-12 bg-teal-600 text-white text-center">
         <h2 className="text-4xl font-bold">Need Assistance?</h2>
         <p className="mt-4 text-lg">Our AI-powered assistant is here to help with your queries.</p>
         <button className="mt-6 px-8 py-3 bg-white text-teal-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition">Chat Now</button>
-      </section>
+      </section> */}
 
       {/* Newsletter Section */}
       <section className="py-12 px-6 bg-white text-center">
