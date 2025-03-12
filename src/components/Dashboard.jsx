@@ -49,7 +49,7 @@ const statCards = [
 const recentActivity = [
   {
     id: 1,
-    user: "Afolabi Farou",
+    user: "Usha Igyo",
     action: "completed task",
     target: "Website Redesign",
     time: "2 hours ago"
@@ -77,17 +77,24 @@ const recentActivity = [
   },
   {
     id: 5,
-    user: "Yua igyou",
+    user: "Yua igyo",
     action: "approved",
     target: "Budget Proposal",
     time: "3 days ago"
   },
   {
     id: 6,
-    user: "MMoffat ini",
+    user: "Moffat ini",
     action: "shared document with",
     target: "Marketing Team",
     time: "4 days ago"
+  },
+  {
+    id: 7,
+    user: "Chukuma Splendid",
+    action: "shared classified document with",
+    target: "You",
+    time: "5 days ago"
   }
 ];
 
@@ -142,7 +149,7 @@ const pendingTasks = [
     title: "Update product documentation",
     priority: "Low",
     dueDate: "March 15",
-    assignedTo: "Sarah"
+    assignedTo: "Igyou"
   },
   {
     id: 4,
@@ -190,7 +197,7 @@ const systemUpdates = [
   {
     id: 2,
     title: "New feature: Dark mode",
-    description: "Dark mode is now available. Enable it from your user settings.",
+    description: "Dark mode is now available. Enable it from your nav bar.",
     date: "March 8"
   },
   {
