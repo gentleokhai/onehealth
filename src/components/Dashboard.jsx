@@ -91,7 +91,7 @@ const recentActivity = [
   },
   {
     id: 7,
-    user: "Chukuma Splendid",
+    user: "Chukwuma Splendid",
     action: "shared classified document with",
     target: "You",
     time: "5 days ago"
