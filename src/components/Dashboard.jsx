@@ -49,42 +49,42 @@ const statCards = [
 const recentActivity = [
   {
     id: 1,
-    user: "John Doe",
+    user: "Afolabi Farou",
     action: "completed task",
     target: "Website Redesign",
     time: "2 hours ago"
   },
   {
     id: 2,
-    user: "Sarah Smith",
+    user: "Nnaemeka kevin",
     action: "commented on",
     target: "Q1 Marketing Plan",
     time: "4 hours ago"
   },
   {
     id: 3,
-    user: "Michael Johnson",
+    user: "Tor Barnabas",
     action: "uploaded file",
     target: "Financial Report.pdf",
     time: "Yesterday"
   },
   {
     id: 4,
-    user: "David Brown",
+    user: "Okhai Felix",
     action: "created project",
     target: "Mobile App Development",
     time: "3 days ago"
   },
   {
     id: 5,
-    user: "Emma Wilson",
+    user: "Yua igyou",
     action: "approved",
     target: "Budget Proposal",
     time: "3 days ago"
   },
   {
     id: 6,
-    user: "Alex Parker",
+    user: "MMoffat ini",
     action: "shared document with",
     target: "Marketing Team",
     time: "4 days ago"
@@ -149,7 +149,7 @@ const pendingTasks = [
     title: "Fix navigation bug in app",
     priority: "High",
     dueDate: "March 11",
-    assignedTo: "Michael"
+    assignedTo: "Adebayo"
   }
 ];
 
@@ -211,10 +211,6 @@ const monthlyRevenue = [
   { month: "Jun", revenue: 52000 },
   { month: "Jul", revenue: 58000 },
   { month: "Aug", revenue: 56000 }
-//   { month: "Sep", revenue: 60000 },
-//   { month: "Oct", revenue: 65000 },
-//   { month: "Nov", revenue: 68000 },
-//   { month: "Dec", revenue: 75000 }
 ];
 
 const Dashboard = () => {
