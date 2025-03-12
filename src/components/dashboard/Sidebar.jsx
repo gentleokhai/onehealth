@@ -90,9 +90,11 @@ const Sidebar = ({ darkMode, isSidebarOpen, setIsSidebarOpen, activeNav, setActi
           >
             <p className="text-sm font-medium">Need help?</p>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Contact support</p>
+            <a href="/contact">
             <button className="mt-2 text-xs bg-blue-600 text-white px-2 py-1 rounded-lg flex items-center">
               Support <ChevronRight size={14} />
             </button>
+            </a>
           </div>
           
           <button
